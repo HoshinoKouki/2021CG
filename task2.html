@@ -29,32 +29,37 @@
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
   
     // 箱を作成
-    var geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
-    var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-    var box1 = new THREE.Mesh(geometry, material);
-    box1.position.set(0.3,0,0);
-    //scene.add(box1);
-    //
-    var box2 = new THREE.Mesh(geometry, material);
-    box2.position.set(0.9,0,0);
-    //scene.add(box2);
-    //
-    var box3 = new THREE.Mesh(geometry, material);
-    box3.position.set(-0.3,0,0);
-    //scene.add(box3);
-    //
-    var box4 = new THREE.Mesh(geometry, material);
-    box4.position.set(-0.9,0,0);
-    //scene.add(box4);
+    var boxgeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
+    var boxmaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+    var box = new THREE.Mesh(boxgeometry, boxmaterial);
+    box.position.set(0.3,0,0);
+    
+    // 平面を作成
+    var planegeometry = new THREE.PlaneGeometry( 0.3, 0.6, 0.3 );
+    var planematerial = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
+    var plane = new THREE.Mesh( planegeometry, planematerial );
+    plane.position.set(0.9,0,0);
+    
+    // 角錐を作成
+    var coneGeometry = new THREE.ConeGeometry( 0.3, 0.4, 6 ); //半径、高さ、底面の分割数
+    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
+    var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    cone.position.set(-0.3,0,0);
+    
+    // 角柱を作成
+    var cylinderGeometry = new THREE.CylinderGeometry( 0.3, 0.3, 0.4, 8 );//上の底面の半径、下の底面の半径、高さ、何角柱か
+    var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
+    var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+    cylinder.position.set(-0.9,0,0);
+    
 
      //全体のオブジェクト
-    //const all = new THREE.Object3D(); 
     const all = new THREE.Group()
-    all.add(box1); // 箱1を追加 
-    all.add(box2); // 箱2を追加 
-    all.add(box3); // 箱3を追加 
-    all.add(box4); // 箱4を追加 
-    all.position.set(0,0,-5);//箱1～4のグループの原点の位置
+    all.add(box); // 箱を追加 
+    all.add(plane); // 平面を追加 
+    all.add(cone); // 角錐を追加 
+    all.add(cylinder); // 角柱を追加 
+    all.position.set(0,0,-5);//グループの原点の位置
     scene.add(all); 
   
     // 平行光源1
@@ -73,14 +78,14 @@
       requestAnimationFrame(update);
   
       // 箱を回転させる
-      box1.rotation.x += 0.01;
-      box1.rotation.y += 0.01;
-      //box2.rotation.x += 0.01;
-      //box2.rotation.y += 0.01;
-      box3.rotation.x += 0.01;
-      box3.rotation.y += 0.01;
-      //box4.rotation.x += 0.01;
-      //box4.rotation.y += 0.01;
+      box.rotation.x += 0.01;
+      box.rotation.y += 0.01;
+      //plane.rotation.x += 0.01;
+      //plane.rotation.y += 0.01;
+      cone.rotation.x += 0.01;
+      cone.rotation.y += 0.01;
+      //cylinder.rotation.x += 0.01;
+      //cylinder.rotation.y += 0.01;
         all.rotation.x += 0.01;
         all.rotation.y += 0.01;
   
