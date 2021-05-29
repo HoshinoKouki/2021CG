@@ -32,25 +32,25 @@
     var boxgeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
     var boxmaterial = new THREE.MeshPhongMaterial({ color: 0x0000ff });
     var box = new THREE.Mesh(boxgeometry, boxmaterial);
-    box.position.set(0.3,0,0);
+    box.position.set(-1.8,0,0);
     
     // 平面を作成
     var planegeometry = new THREE.PlaneGeometry( 0.3, 0.6, 0.3 );
     var planematerial = new THREE.MeshPhongMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
     var plane = new THREE.Mesh( planegeometry, planematerial );
-    plane.position.set(0.9,0,0);
+    plane.position.set(-1.2,0,0);
     
     // 角錐を作成
     var coneGeometry = new THREE.ConeGeometry( 0.3, 0.4, 6 ); //半径、高さ、底面の分割数
     var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
     var cone = new THREE.Mesh( coneGeometry, coneMaterial );
-    cone.position.set(-0.3,0,0);
+    cone.position.set(-0.6,0,0);
     
     // 角柱を作成
-    var cylinderGeometry = new THREE.CylinderGeometry( 0.3, 0.3, 0.4, 8 );//上の底面の半径、下の底面の半径、高さ、何角柱か
+    var cylinderGeometry = new THREE.CylinderGeometry( 0.2, 0.2, 0.4, 8 );//上の底面の半径、下の底面の半径、高さ、何角柱か
     var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0x0000ff} );
     var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-    cylinder.position.set(-0.9,0,0);
+    cylinder.position.set(0,0,0);
     
 
      //全体のオブジェクト
@@ -77,15 +77,15 @@
     var update = function() {
       requestAnimationFrame(update);
   
-      // 箱を回転させる
+      // オブジェクトを回転させる
       box.rotation.x += 0.01;
       box.rotation.y += 0.01;
-      //plane.rotation.x += 0.01;
-      //plane.rotation.y += 0.01;
+      plane.rotation.x += 0.01;
+      plane.rotation.y += 0.01;
       cone.rotation.x += 0.01;
       cone.rotation.y += 0.01;
-      //cylinder.rotation.x += 0.01;
-      //cylinder.rotation.y += 0.01;
+      cylinder.rotation.x += 0.01;
+      cylinder.rotation.y += 0.01;
         all.rotation.x += 0.01;
         all.rotation.y += 0.01;
   
