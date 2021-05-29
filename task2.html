@@ -52,13 +52,35 @@
     var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
     cylinder.position.set(0,0,0);
     
+    // 球を作成
+    var sphereGeometry = new THREE.SphereGeometry( 0.2, 32, 32 ); //半径、垂直方向の分割数、水平方向の分割数
+    var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
+    var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+    sphere.position.set(0.6,0,0);
+    
+    // ドーナッツを作成
+    var torusGeometry = new THREE.TorusGeometry( 0.2, 0.08, 6, 12 ); //半径、ドーナッツの太さ、ドーナッツのチューブ方向の分割数、水平方向の分割数
+    var torusMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff } );
+    var torus = new THREE.Mesh( torusGeometry, torusMaterial );
+    torus.position.set(1.2,0,0);
+    
+    // なんかクネクネしてるやつを作成
+    var torusKnotGeometry = new THREE.TorusKnotGeometry( 1.5, 0.3, 20, 6, 3, 2 ); 
+    //全体的な大きさ、チューブの太さ、クネクネの進む方向に対して何分割するか、
+    //チューブ方向に対して何分割するか、残りの二つの数字を変えるとクネクネの形が変わる
+    var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff } );
+    var torusKnot = new THREE.Mesh( torusKnotGeometry, torusKnotMaterial );
+    torusKnot.position.set(1.8,0,0);
 
      //全体のオブジェクト
     const all = new THREE.Group()
-    all.add(box); // 箱を追加 
-    all.add(plane); // 平面を追加 
-    all.add(cone); // 角錐を追加 
-    all.add(cylinder); // 角柱を追加 
+    all.add(box); // 箱を追加
+    all.add(plane); // 平面を追加
+    all.add(cone); // 角錐を追加
+    all.add(cylinder); // 角柱を追加
+    all.add(sphere); // 球を追加
+    all.add(torus); // ドーナッツを追加
+    all.add(torusKnot); // なんかクネクネしてるやつを追加
     all.position.set(0,0,-5);//グループの原点の位置
     scene.add(all); 
   
@@ -86,6 +108,12 @@
       cone.rotation.y += 0.01;
       cylinder.rotation.x += 0.01;
       cylinder.rotation.y += 0.01;
+      sphere.rotation.x += 0.01;
+      sphere.rotation.y += 0.01;
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.01;
+      torusKnot.rotation.x += 0.01;
+      torusKnot.rotation.y += 0.01;
         all.rotation.x += 0.01;
         all.rotation.y += 0.01;
   
