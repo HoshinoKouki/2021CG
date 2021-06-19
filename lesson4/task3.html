@@ -95,19 +95,16 @@
         //ログハウス屋根
         var materials = [
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/renga.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/renga.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/renga.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
         ];
         var material = new THREE.MeshFaceMaterial(materials);
         
-        var cylinderGeometry = new THREE.CylinderGeometry( 30, 200, 60, 4 );
+        var cylinderGeometry = new THREE.CylinderGeometry( 30, 200, 80, 4 );
         var cylinder = new THREE.Mesh(cylinderGeometry, material);
-        cylinder.position.set(0,140,0);
+        cylinder.position.set(0,150,0);
         scene.add(cylinder);
-        cylinder.rotation.y += 1;
+        cylinder.rotation.y += 1.5;
         
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
