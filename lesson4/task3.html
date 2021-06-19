@@ -48,21 +48,7 @@
         // シーンに追加
         scene.add(directionalLight3);
         
-        //地面作成
-        var materials = [
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/grass.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
-        ];
-        var material = new THREE.MeshFaceMaterial(materials);
         
-        var geometry = new THREE.BoxGeometry(800, 1, 800);
-        var box = new THREE.Mesh(geometry, material);
-        box.position.set(0,0,0);
-        scene.add(box);
         
         //ログハウス作成
         var materials2 = [
