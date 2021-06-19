@@ -71,7 +71,7 @@
         
          //ログハウス壁
         var materials = [
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/doorkabe.jpg")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
@@ -87,7 +87,7 @@
         
         //ログハウス土台    
         var geometry = new THREE.BoxGeometry(200, 10, 200);
-        var material = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
+        var material = new THREE.MeshPhongMaterial({ color: 0x888888 });
         var box3 = new THREE.Mesh(geometry, material);
         box3.position.set(0,5,0);
         scene.add(box3);
