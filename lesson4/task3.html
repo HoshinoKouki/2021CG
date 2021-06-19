@@ -103,10 +103,11 @@
         ];
         var material = new THREE.MeshFaceMaterial(materials);
         
-        var cylinderGeometry = new THREE.CylinderGeometry( 30, 120, 60, 4 );
+        var cylinderGeometry = new THREE.CylinderGeometry( 30, 200, 60, 4 );
         var cylinder = new THREE.Mesh(cylinderGeometry, material);
         cylinder.position.set(0,140,0);
         scene.add(cylinder);
+        cylinder.rotation.x += 1;
         
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
