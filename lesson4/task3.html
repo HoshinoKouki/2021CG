@@ -48,24 +48,23 @@
         // シーンに追加
         scene.add(directionalLight3);
         
-        
-        
-        //ログハウス作成
-        var materials2 = [
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+        //地面作成
+        var materials = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/grass.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/sand.jpg")}),
         ];
-        var material2 = new THREE.MeshFaceMaterial(materials2);
+        var material = new THREE.MeshFaceMaterial(materials);
         
-        var geometry2 = new THREE.BoxGeometry(200, 100, 200);
-        var box2 = new THREE.Mesh(geometry2, material2);
-        box2.position.set(0,60,0);
-        scene.add(box2);
-
+        var geometry = new THREE.BoxGeometry(800, 1, 800);
+        var box = new THREE.Mesh(geometry, material);
+        box.position.set(0,0,0);
+        scene.add(box);
+        
+        
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture0 = textureLoader.load("img/tree0.png");
