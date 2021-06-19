@@ -64,7 +64,7 @@
         ];
         var material = new THREE.MeshFaceMaterial(materials);
         
-        var geometry = new THREE.BoxGeometry(800, 2, 800);
+        var geometry = new THREE.BoxGeometry(600, 2, 600);
         var box = new THREE.Mesh(geometry, material);
         box.position.set(0,0,0);
         scene.add(box);
@@ -131,6 +131,13 @@
         sprite04.position.z = 30;
         sprite04.scale.set(100,100,100);
         scene.add(sprite04);
+        
+        const sprite05 = new THREE.Sprite(material0);
+        sprite05.position.x = 170;
+        sprite05.position.y = 50;
+        sprite05.position.z = 220;
+        sprite05.scale.set(100,100,100);
+        scene.add(sprite05);
 
         // 木1をスプライトで作成 
         var texture1 = textureLoader.load("img/tree1.png");
@@ -243,11 +250,32 @@
         scene.add(sprite31);
         
         const sprite32 = new THREE.Sprite(material3);
-        sprite32.position.x = -190;
+        sprite32.position.x = -220;
         sprite32.position.y = 50;
         sprite32.position.z = -160;
         sprite32.scale.set(100,100,100);
         scene.add(sprite32);
+        
+        const sprite33 = new THREE.Sprite(material3);
+        sprite33.position.x = -120;
+        sprite33.position.y = 50;
+        sprite33.position.z = -210;
+        sprite33.scale.set(100,100,100);
+        scene.add(sprite33);
+        
+        const sprite34 = new THREE.Sprite(material3);
+        sprite34.position.x = -40;
+        sprite34.position.y = 50;
+        sprite34.position.z = -240;
+        sprite34.scale.set(100,100,100);
+        scene.add(sprite34);
+        
+        const sprite35 = new THREE.Sprite(material3);
+        sprite35.position.x = -210;
+        sprite35.position.y = 50;
+        sprite35.position.z = -120;
+        sprite35.scale.set(100,100,100);
+        scene.add(sprite35);
 
         tick();
         // 毎フレーム時に実行されるループイベントです
