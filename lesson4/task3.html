@@ -64,6 +64,21 @@
         box.position.set(0,0,0);
         scene.add(box);
         
+         //ログハウス作成
+        var materials = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/kabegami.jpg")}),
+        ];
+        var material = new THREE.MeshFaceMaterial(materials);
+        
+        var geometry = new THREE.BoxGeometry(200, 100, 200);
+        var box2 = new THREE.Mesh(geometry, material);
+        box2.position.set(0,60,0);
+        scene.add(box2);
         
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
